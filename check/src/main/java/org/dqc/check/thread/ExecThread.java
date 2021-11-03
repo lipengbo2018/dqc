@@ -13,36 +13,24 @@ public class ExecThread {
 
     private static final Logger logger = Logger.getLogger(ExecThread.class);
 
-    public void execCheck(Integer threads, String ds, String taskno, Boolean isfirstexec) throws ClassNotFoundException
-            , NoSuchMethodException, InstantiationException, IllegalAccessException
-            , InvocationTargetException, InterruptedException {
+    public void execCheck(Integer threads, String ds, String taskno, Boolean isfirstexec){
 
         ExecutorService exec = Executors.newFixedThreadPool(threads);
 
         CreationSQL creationsql=new CreationSQL(ds,taskno,isfirstexec);
+
         ArrayList<String[]> sqllist=creationsql.creationSQLList();
         for (String[] paramarr : sqllist) {
             Runnable run = new ExecCheck(paramarr);
             exec.execute(run);
         }
         exec.shutdown();
-        exec.awaitTermination(12, TimeUnit.HOURS);
-
-    }
-
-    public void execCheckIndicator(Integer threads, String ds, Boolean isfirstexec) throws ClassNotFoundException
-            , NoSuchMethodException, InstantiationException, IllegalAccessException
-            , InvocationTargetException, InterruptedException {
-        //分指标统计差异，并按过滤规则对差异数据做过滤
-
-        ArrayList<String> indicatorlist=new MysqlDAO().getIndicatorInfo(ds,isfirstexec);
-        ExecutorService execidct = Executors.newFixedThreadPool(threads);
-        for (String indicator : indicatorlist) {
-            Runnable run = new ExecCheckIndicator(ds,indicator);
-            execidct.execute(run);
+        try {
+            exec.awaitTermination(12, TimeUnit.HOURS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        execidct.shutdown();
-        execidct.awaitTermination(12, TimeUnit.HOURS);
+
     }
 
 }

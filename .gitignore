@@ -2,3 +2,9 @@
 .gitignore
 .idea
 .idea/libraries
+check/dependency-reduced-pom.xml
+check/check.iml
+check/src/test/
+check/target/
+logs/
+check/target

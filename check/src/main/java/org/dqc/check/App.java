@@ -1,7 +1,5 @@
 package org.dqc.check;
 
-import com.reyun.check.phonemsg.HttpClientUtil;
-import com.reyun.check.phonemsg.PhoneMsgInfo;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -19,13 +17,13 @@ public class App
             , NoSuchMethodException, InstantiationException, IllegalAccessException
             , InvocationTargetException
     {
-        PropertyConfigurator.configure("checkconf/log4j.properties");
+        PropertyConfigurator.configure("log4j.properties");
 
         try {
             //短信通知
-            new HttpClientUtil().sendMsg("error");
+            //new HttpClientUtil().sendMsg("error");
             //打电话报警
-            new PhoneMsgInfo().sendMsg("error");
+            //new PhoneMsgInfo().sendMsg("error");
         }
         catch (Exception e1) {
         e1.printStackTrace();

@@ -9,9 +9,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.4.4" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-jdbc:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-common:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hive:hive-storage-api:2.1.0" level="project" />
@@ -46,7 +48,6 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty.aggregate:jetty-all:7.6.0.v20120127" level="project" />
     <orderEntry type="library" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.1" level="project" />
-    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.geronimo.specs:geronimo-jaspic_1.0_spec:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.geronimo.specs:geronimo-annotation_1.0_spec:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: asm:asm-commons:3.1" level="project" />

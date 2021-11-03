@@ -14,9 +14,7 @@ public class CreationSQL{
     private ArrayList<String[]> sqllist =new ArrayList<String[]>();
     private String ds;
 
-    public CreationSQL(String ds, String tasknolist, Boolean isfirstexec)throws ClassNotFoundException
-            , NoSuchMethodException, InstantiationException, IllegalAccessException
-            , InvocationTargetException {
+    public CreationSQL(String ds, String tasknolist, Boolean isfirstexec) {
         logger.info(tasknolist);
         if(tasknolist==null){
             this.taskconfiglist=new MysqlDAO().getTaskConfig(ds,isfirstexec);
